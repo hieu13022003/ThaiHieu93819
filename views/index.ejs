@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DANH SÁCH DỮ LIỆU</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1>DANH SÁCH DỮ LIỆU</h1>
+    <a href="/form-add"><button>THÊM DỮ LIỆU</button></a>
+    <table border="1">
+        <tr>
+            <th>LatLong</th>
+            <th>Role</th>
+            <th>OpenHour</th>
+            <th>DefaultAccount</th>
+            <th>BankName</th>
+            <th>BranchName</th>
+        </tr>
+        <% User4s.forEach(item => { %>
+            <tr>
+                <td>
+                    <%= item.LatLong %>
+                </td>
+                <td>
+                    <%= item.Role %>
+                </td>
+                <td>
+                    <%= item.OpenHour %>
+                </td>
+                <td>
+                    <%= item.DefaultAccount %>
+                </td>
+                <td>
+                    <%= item.BankName %>
+                </td>
+                <td>
+                    <%= item.BranchName %>
+                </td>
+                <td>
+                    <a href="/form-update/<%= item._id %>">UPDATE</a>||<a href="/form-delete/<%= item._id %>">DELETE</a>||
+                </td>
+            </tr>
+            <% }) %>
+    </table>
+
+</body>
+
+</html>
