@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Danh sách custommer 2</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Danh Sách custommer 2</h1>
+    <a href="/form-add"><button type="submit">Thêm</button></a>
+    <table border="1">
+      <tr>
+        <th>IDProvince</th>
+        <th>Phone</th>
+        <th>Password</th>
+        <th>TypeRegister</th>
+        <th>Full Name</th>
+        <th>Type User</th>
+        <th>Acction</th>
+      </tr>
+      <% custommertwos.forEach(item => {%>
+        <tr>
+          <td><%= item._id %></td>
+          <td><%= item.phone %></td>
+          <td><%= item.password %></td>
+          <td><%= item.register %></td>
+          <td><%= item.fname %></td>
+          <td><%= item.type %></td>
+          <td><a href="/form-update/<%= item._id %>">UPDATE</a>||<a href="/form-delete/<%= item._id %>">Delete</a></td>
+        </tr>
+      <%})%>
+    </table>
+  </body>
+</html>
